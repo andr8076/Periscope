@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "periscope-jan"
+version = "0.1.0"
+description = "Local Jan model browser access and opt-in Jan Desktop chat importer"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+periscope = "periscope.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
