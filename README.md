@@ -125,3 +125,15 @@ python -m unittest discover -s tests -v
 - [Jan: desktop data folder and thread format](https://docs.jan.ai/desktop/data-folder)
 
 MIT License.
+
+## Directly serve your existing GGUF models (no Jan required)
+
+On Build-Arch, where `llama-server` and the GGUF model library are already installed:
+
+```bash
+./scripts/start-llama-router.sh
+```
+
+The script links existing models from SmollSSD and Storyteller without copying them, and serves an OpenAI-compatible API at `http://127.0.0.1:18090/v1`. Open WebUI can connect to it via **Settings → Admin → Connections**. Choose this instead of the Jan API if you want to run local GGUF files independently of Jan. No model server starts on boot.
+
+See [Direct model serving instructions](docs/direct-model-serving.md) for the configuration and security details.
